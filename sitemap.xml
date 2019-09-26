@@ -6,4 +6,6 @@
 <url> <loc>http://www.qatools.cn/books/postman_in_action/section1/installation.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.qatools.cn/books/postman_in_action/section1/menus.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.qatools.cn/books/postman_in_action/section1/create-request.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://www.qatools.cn/books/postman_in_action/section1/request-response.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://www.qatools.cn/books/postman_in_action/section1/setting-parameters.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>

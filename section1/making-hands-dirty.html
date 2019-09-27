@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>设置请求参数 · Postman API 自动化测试与持续集成全栈攻略</title>
+        <title>实战环节之快速上手 · Postman API 自动化测试与持续集成全栈攻略</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -98,10 +98,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="making-hands-dirty.html" />
+    <link rel="next" href="../section2/nodjs-postman.md" />
     
     
-    <link rel="prev" href="request-response.html" />
+    <link rel="prev" href="setting-parameters.html" />
     
 
     <style>
@@ -264,7 +264,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.6" data-path="setting-parameters.html">
+        <li class="chapter " data-level="2.6" data-path="setting-parameters.html">
             
                 <a href="setting-parameters.html">
             
@@ -279,7 +279,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.7" data-path="making-hands-dirty.html">
+        <li class="chapter active" data-level="2.7" data-path="making-hands-dirty.html">
             
                 <a href="making-hands-dirty.html">
             
@@ -861,7 +861,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >设置请求参数</a>
+        <a href=".." >实战环节之快速上手</a>
     </h1>
 </div>
 
@@ -876,108 +876,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x8BBE;&#x7F6E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;"><a name="&#x8BBE;&#x7F6E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x8BBE;&#x7F6E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBE;&#x7F6E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h2>
-<h3 id="&#x53C2;&#x6570;&#x662F;&#x4EC0;&#x4E48;"><a name="&#x53C2;&#x6570;&#x662F;&#x4EC0;&#x4E48;" class="plugin-anchor" href="#&#x53C2;&#x6570;&#x662F;&#x4EC0;&#x4E48;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;&#x662F;&#x4EC0;&#x4E48;</h3>
-<p>&#x53C2;&#x6570;&#x662F; URL &#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x7528;&#x4E86;&#x5411;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x9012;&#x5177;&#x6709;&#x7279;&#x5B9A;&#x542B;&#x4E49;&#x7684;&#x6307;&#x4EE4;&#x3002;RESTFul API &#x5411;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684; URL &#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre class="language-"><code class="lang-http"><span class="token header-name keyword">http:</span>//qatools.cn/api/message/getList?pageSize=5&amp;apiSource=client
-</code></pre>
-<p>URL &#x8BF7;&#x6C42;&#x4E2D;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4EE5;&#x201D;  <strong>&#xFF1F;</strong>&#x201C;&#x5F00;&#x59CB;&#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x3002;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x5EFA;&#x503C;&#x5BF9;&#x683C;&#x5F0F; &#x201D;<strong>Key = Value</strong>&#x201C;&#x3002;&#x4EE5;&#x4E0A;&#x4E3E;&#x4F8B;&#x4E2D; <code>pageSize=5&amp;apiSource=client</code> &#x5373;&#x662F;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x3002;&#x5B83;&#x4EEC;&#x7684;&#x542B;&#x4E49;&#x662F;&#xFF1A;</p>
-<blockquote>
-<p><code>pageSize=5</code> : &#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7684;&#x9875;&#x9762;&#x5927;&#x5C0F;&#x4E3A; 5 &#x6761;&#x8BB0;&#x5F55;&#x3002;</p>
-<p><code>apiSource=client</code> : &#x8BF7;&#x6C42;&#x7684;&#x53D1;&#x8D77;&#x8005;&#x662F;&#x5BA2;&#x6237;&#x7AEF;</p>
-</blockquote>
-<p>&#x6211;&#x4EEC;&#x628A;&#x4EE5;&#x4E0A;&#x8BF7;&#x6C42; URL &#x586B;&#x5165;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5730;&#x5740;&#x680F;&#x4E2D;&#x53D1;&#x9001;&#x4F1A;&#x5F97;&#x5230;&#x4EE5;&#x4E0B;&#x54CD;&#x5E94;&#x7ED3;&#x679C;&#xFF1A;</p>
-<p><img src="../images/01-06-parameters-browser-url.png" alt="Browser-URL"></p>
-<p>&#x8FD4;&#x56DE;&#x7684;&#x662F; JSON &#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x683C;&#x5F0F;&#x5316;&#x663E;&#x793A;&#x540E;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
-    <span class="token property">&quot;state&quot;</span><span class="token operator">:</span> <span class="token string">&quot;success&quot;</span><span class="token punctuation">,</span> 
-    <span class="token property">&quot;docs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-            <span class="token property">&quot;_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HkQkb0K3z&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;contentId&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-                <span class="token property">&quot;_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;H1MLwht3f&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Selenium &#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x6218;&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;stitle&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Selenium &#x4ECE;&#x5165;&#x95E8;&#x5230;&#x5B9E;&#x6218;&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;updateDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-09-27&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;date&quot;</span><span class="token operator">:</span> <span class="token string">&quot;23 &#x5206;&#x949F;&#x524D;&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;H1MLwht3f&quot;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;replyAuthor&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;relationMsgId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;author&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-                <span class="token property">&quot;_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BymMMRr2f&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;userName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;docker&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;logo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/upload/images/defaultlogo.png&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;date&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-04-19 16:23:38&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;enable&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;BymMMRr2f&quot;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;__v&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;content&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#x54EA;&#x91CC;&#x6709;&#x6559;&#x7A0B;&#x770B;&#xFF1F;&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;hasPraise&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;praiseNum&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;date&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1 &#x5E74;&#x524D;&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;utype&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HkQkb0K3z&quot;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span> 
-        <span class="token punctuation">{</span>
-            <span class="token property">&quot;_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;r1AvlJ3qz&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;contentId&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-                <span class="token property">&quot;_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;B1MOC0oqz&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#x6D4B;&#x8BD5;&#x7BA1;&#x7406;&#x8981;&#x7D20;&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;stitle&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#x6D4B;&#x8BD5;&#x7BA1;&#x7406;&#x8981;&#x7D20;&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;updateDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2019-09-27&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;date&quot;</span><span class="token operator">:</span> <span class="token string">&quot;23 &#x5206;&#x949F;&#x524D;&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;B1MOC0oqz&quot;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;replyAuthor&quot;</span><span class="token operator">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;relationMsgId&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;author&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-                <span class="token property">&quot;_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;S1FGh0icz&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;userName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;toolsqa&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;logo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/upload/images/defaultlogo.png&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;date&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-03-30 23:47:29&quot;</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;enable&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> 
-                <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;S1FGh0icz&quot;</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;__v&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;content&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x7EE7;&#x7EED;&#x53D1;&#x5E03;&#x554A;&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;hasPraise&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;praiseNum&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;date&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1 &#x5E74;&#x524D;&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;utype&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span> 
-            <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;r1AvlJ3qz&quot;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span> 
-    <span class="token property">&quot;pageInfo&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">&quot;totalItems&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> 
-        <span class="token property">&quot;current&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> 
-        <span class="token property">&quot;pageSize&quot;</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> 
-        <span class="token property">&quot;searchkey&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="postman-&#x4E2D;&#x8BBE;&#x7F6E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;"><a name="postman-&#x4E2D;&#x8BBE;&#x7F6E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;" class="plugin-anchor" href="#postman-&#x4E2D;&#x8BBE;&#x7F6E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>Postman &#x4E2D;&#x8BBE;&#x7F6E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h3>
-<p>&#x5728; Params &#x6807;&#x7B7E;&#x680F;&#x4E2D;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x952E;&#xFF08; Key&#xFF09; -&#x503C;&#xFF08; Value&#xFF09; &#x7684;&#x65B9;&#x5F0F;&#x586B;&#x5165;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF0C;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F; 0 &#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5728; &#x63CF;&#x8FF0;&#xFF08;Description &#xFF09;&#x680F;&#x5BF9;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;</p>
-<p>Postman &#x81EA;&#x52A8;&#x628A; URL &#x5730;&#x5740;&#x680F;&#x4E2D; &#x201C;<strong>&#xFF1F;</strong>&#x201D;&#x53F7;&#x4EE5;&#x540E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x5728; Params &#x6807;&#x7B7E;&#x680F;&#x8FDB;&#x884C;&#x4E86;&#x81EA;&#x52A8;&#x62C6;&#x5206;&#x663E;&#x793A;&#xFF0C;&#x5728; Params &#x6807;&#x7B7E;&#x680F;&#x65B0;&#x589E;&#x3001;&#x4FEE;&#x6539;&#x3001;&#x5220;&#x9664;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4E5F;&#x4F1A;&#x5728; URL &#x5730;&#x5740;&#x680F;&#x4E2D;&#x589E;&#x52A0;&#x3001;&#x66F4;&#x65B0;&#x548C;&#x5220;&#x9664;&#x3002;</p>
-<p><img src="../images/01-06-parameters-keyvalue.png" alt="Key-Value"></p>
-<p><a href="http://toolsqa.com/wp-content/uploads/sites/1/nggallery/postman/params-3.png" target="_blank"><img src="https://toolsqa.com/wp-content/uploads/sites/1/nggallery/postman/thumbs/thumbs_params-3.png" alt="params"></a></p>
-<h3 id="&#x5FEB;&#x901F;&#x590D;&#x5236;&#x8BF7;&#x6C42;&#x53C2;&#x6570;"><a name="&#x5FEB;&#x901F;&#x590D;&#x5236;&#x8BF7;&#x6C42;&#x53C2;&#x6570;" class="plugin-anchor" href="#&#x5FEB;&#x901F;&#x590D;&#x5236;&#x8BF7;&#x6C42;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FEB;&#x901F;&#x590D;&#x5236;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</h3>
-<ul>
-<li>&#x70B9;&#x51FB; Params &#x6807;&#x7B7E;&#x680F;&#x53F3;&#x4FA7;&#x7684; &#x3010;Bulk Edit&#x3011;&#x6309;&#x94AE;</li>
-</ul>
-<p><img src="../images/01-06-parameters-bulk.png" alt="Bulk"> </p>
-<ul>
-<li>&#x53C2;&#x6570;&#x4EE5;&#x6587;&#x672C;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#xFF0C;&#x591A;&#x9009;&#x6216;&#x5168;&#x9009;&#x540E;&#x53EF;&#x4EE5;&#x6279;&#x91CF;&#x590D;&#x5236;&#x3002;</li>
-</ul>
-<p><img src="../images/01-06-parameters-bulk-copy.png" alt="Bulk-Copy"></p>
-<ul>
-<li>&#x539F;&#x6765;&#x7684;&#x3010;Bulk Edit&#x3011; &#x6309;&#x94AE;&#x8FD9;&#x65F6;&#x522B; &#x3010;Key-Value Edit&#x3011;&#x66FF;&#x6362;&#xFF0C;&#x70B9;&#x51FB;&#x3010; Key-Value Edit&#x3011;&#x6309;&#x94AE;&#xFF0C;Params &#x6807;&#x7B7E;&#x680F;&#x8FD4;&#x56DE; Key-Value &#x7684;&#x663E;&#x793A;&#x65B9;&#x5F0F;&#x3002;</li>
-</ul>
-<p><img src="../images/01-06-parameters-key-value-edit.png" alt="key-value-edit"></p>
-<p>Postman &#x53C2;&#x6570;&#x90E8;&#x5206;&#x7684;&#x65B0;&#x589E;&#x3001;&#x4FEE;&#x6539;&#x3001;&#x5220;&#x9664;&#x8FD8;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x3002;&#x53E6;&#x5916;&#x53C2;&#x6570;&#x5BF9;&#x4E8E; URL &#x4E5F;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;&#x901A;&#x8FC7; URL &#x53EF;&#x4EE5;&#x53D1;&#x8D77;&#x590D;&#x6742;&#x7684;&#x8BF7;&#x6C42;&#x3002;&#x7406;&#x89E3;&#x5E76;&#x5B66;&#x4F1A;&#x4F7F;&#x7528;&#x53C2;&#x6570;&#x662F; API &#x6D4B;&#x8BD5;&#x7684;&#x57FA;&#x7840;&#x3002;</p>
+                                <h2 id="&#x5B9E;&#x6218;&#x73AF;&#x8282;&#xFF1A;demon-&#x6F14;&#x7EC3;&#x5FEB;&#x901F;&#x4E0A;&#x624B;"><a name="&#x5B9E;&#x6218;&#x73AF;&#x8282;&#xFF1A;demon-&#x6F14;&#x7EC3;&#x5FEB;&#x901F;&#x4E0A;&#x624B;" class="plugin-anchor" href="#&#x5B9E;&#x6218;&#x73AF;&#x8282;&#xFF1A;demon-&#x6F14;&#x7EC3;&#x5FEB;&#x901F;&#x4E0A;&#x624B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x6218;&#x73AF;&#x8282;&#xFF1A;Demon &#x6F14;&#x7EC3;&#x5FEB;&#x901F;&#x4E0A;&#x624B;</h2>
+<p><img src="../images/walking.svg" alt="Walking"></p>
+<h2 id="&#x51FA;&#x53BB;&#x905B;&#x5F2F;&#x513F;&#xFF0C;&#x9A6C;&#x4E0A;&#x56DE;&#x6765;&#xFF01;&#x2006;&#x2006;"><a name="&#x51FA;&#x53BB;&#x905B;&#x5F2F;&#x513F;&#xFF0C;&#x9A6C;&#x4E0A;&#x56DE;&#x6765;&#xFF01;&#x2006;&#x2006;" class="plugin-anchor" href="#&#x51FA;&#x53BB;&#x905B;&#x5F2F;&#x513F;&#xFF0C;&#x9A6C;&#x4E0A;&#x56DE;&#x6765;&#xFF01;&#x2006;&#x2006;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x51FA;&#x53BB;&#x905B;&#x5F2F;&#x513F;&#xFF0C;&#x9A6C;&#x4E0A;&#x56DE;&#x6765;&#xFF01;^&#x2006;_&#x2006;^</h2>
 <footer class="page-footer"><span class="copyright"><a href="http://qatools.cn" target="_blank">&#x5410;&#x53F8; QA</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
-2019-09-27 14:35:00
+2019-09-27 14:39:05
 </span></footer>
                                 
                                 </section>
@@ -1005,12 +908,12 @@
 
             
                 
-                <a href="request-response.html" class="navigation navigation-prev " aria-label="Previous page: API 请求与响应处理">
+                <a href="setting-parameters.html" class="navigation navigation-prev " aria-label="Previous page: 设置请求参数">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="making-hands-dirty.html" class="navigation navigation-next " aria-label="Next page: 实战环节之快速上手">
+                <a href="../section2/nodjs-postman.md" class="navigation navigation-next " aria-label="Next page: NodeJS 与 Postman 脚本">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1021,7 +924,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设置请求参数","level":"2.6","depth":1,"next":{"title":"实战环节之快速上手","level":"2.7","depth":1,"path":"section1/making-hands-dirty.md","ref":"section1/making-hands-dirty.md","articles":[]},"previous":{"title":"API 请求与响应处理","level":"2.5","depth":1,"path":"section1/request-response.md","ref":"section1/request-response.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","anchors","-lunr","-search","search-plus","disqus","-highlight","prism","prism-themes","github-buttons","splitter","-sharing","sharing-plus","tbfed-pagefooter","expandable-chapters-small","ga","donate","sitemap-general","copy-code-button","callouts","mermaid-gb3","baidu","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_format":"YYYY-MM-DD HH:mm:ss","modify_label":"最后更新：","copyright":"<a href='http://qatools.cn'>吐司 QA</a>，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"disqus":{"useIdentifier":false,"shortName":" toolsqacn "},"callouts":{"showTypeInHeader":false},"toolbar-button":{"label":"下载本书PDF版本","url":"http://www.qatools.cn/books/postman_in_action/pdf/postman_in_action.pdf","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"https://toolsqacn.github.io/images/alipy.png","alipayText":"支付宝打赏给作者","button":"打赏","title":"","wechat":"https://toolsqacn.github.io/images/webchatpay.png","wechatText":"微信打赏给作者"},"sitemap-general":{"prefix":"http://www.qatools.cn/books/postman_in_action/"},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"theme-comscore":{},"prism-themes":{},"github-buttons":{"buttons":[{"repo":"postman_in_action","count":true,"type":"star","user":"toolsqacn","size":"small"},{"count":false,"width":"120","type":"follow","user":"toolsqacn","size":"small"}]},"expandable-chapters-small":{},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-28297199-1"},"baidu":{"token":"5e55779da2e08f6d9108f5eece199a16"},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":true,"weibo":true,"webchat":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"杜铁绳 <dutiesheng@toolsqa.cn>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Postman API 自动化测试与持续集成全栈攻略","language":"zh-hans","links":{"sidebar":{"主页":"http://www.qatools.cn"}},"gitbook":"3.2.3","description":"《Postman 接口自动化测试与持续集成全栈攻略》 对 Postman 常用的技能进行全面梳理讲解，一本在手搞定接口测试"},"file":{"path":"section1/setting-parameters.md","mtime":"2019-09-27T06:35:00.656Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-27T07:00:45.728Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"实战环节之快速上手","level":"2.7","depth":1,"next":{"title":"NodeJS 与 Postman 脚本","level":"3.1","depth":1,"path":"section2/nodjs-postman.md","ref":"section2/nodjs-postman.md","articles":[]},"previous":{"title":"设置请求参数","level":"2.6","depth":1,"path":"section1/setting-parameters.md","ref":"section1/setting-parameters.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-comscore","anchors","-lunr","-search","search-plus","disqus","-highlight","prism","prism-themes","github-buttons","splitter","-sharing","sharing-plus","tbfed-pagefooter","expandable-chapters-small","ga","donate","sitemap-general","copy-code-button","callouts","mermaid-gb3","baidu","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_format":"YYYY-MM-DD HH:mm:ss","modify_label":"最后更新：","copyright":"<a href='http://qatools.cn'>吐司 QA</a>，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布"},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"disqus":{"useIdentifier":false,"shortName":" toolsqacn "},"callouts":{"showTypeInHeader":false},"toolbar-button":{"label":"下载本书PDF版本","url":"http://www.qatools.cn/books/postman_in_action/pdf/postman_in_action.pdf","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"https://toolsqacn.github.io/images/alipy.png","alipayText":"支付宝打赏给作者","button":"打赏","title":"","wechat":"https://toolsqacn.github.io/images/webchatpay.png","wechatText":"微信打赏给作者"},"sitemap-general":{"prefix":"http://www.qatools.cn/books/postman_in_action/"},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"theme-comscore":{},"prism-themes":{},"github-buttons":{"buttons":[{"repo":"postman_in_action","count":true,"type":"star","user":"toolsqacn","size":"small"},{"count":false,"width":"120","type":"follow","user":"toolsqacn","size":"small"}]},"expandable-chapters-small":{},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-28297199-1"},"baidu":{"token":"5e55779da2e08f6d9108f5eece199a16"},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":true,"weibo":true,"webchat":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"杜铁绳 <dutiesheng@toolsqa.cn>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Postman API 自动化测试与持续集成全栈攻略","language":"zh-hans","links":{"sidebar":{"主页":"http://www.qatools.cn"}},"gitbook":"3.2.3","description":"《Postman 接口自动化测试与持续集成全栈攻略》 对 Postman 常用的技能进行全面梳理讲解，一本在手搞定接口测试"},"file":{"path":"section1/making-hands-dirty.md","mtime":"2019-09-27T06:39:05.622Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-27T07:00:45.728Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
